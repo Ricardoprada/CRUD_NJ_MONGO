@@ -11,9 +11,13 @@ router.get("/", async (req, res) => {
 });
 
 router.post('/task/add', async (req, res) => {
-  const task = new Task(req.body);
-  const taskSave = await task.save();
-  res.redirect("/");
+  try {
+    const task = new Task(req.body);
+    await task.save();
+    res.redirect("/");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.get("/about", (req, res) => {
