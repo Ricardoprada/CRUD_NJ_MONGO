@@ -1,7 +1,6 @@
 //@ts-check
 
 import { Router } from "express";
-import Task from '../models/Task';
 import { renderTask, createTask, renderTaskEdit, editTask, deleteTask, taskToggleDone } from '../controllers/task.controller';
 
 const router = Router();
